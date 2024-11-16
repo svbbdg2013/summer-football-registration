@@ -33,9 +33,7 @@
       <h3>Mannschaftsdaten</h3>
       <div id="teamsContainer">
         <div class="team-section">
-          <label for="kinderZahl">Wieviel Kinder</label>
-          <input type="int" id="kinderZahl" name="kinderZahl[]" required>
-
+        
           <label for="teamName1">Teamname</label>
           <input type="text" id="teamName1" name="teamName[]" required>
           
@@ -46,7 +44,8 @@
             <option value="U12">U12</option>
             <option value="U13">U13</option>
           </select>
-          
+          <label for="kinderZahl">Wieviel Kinder</label>
+          <input type="int" id="kinderZahl" name="kinderZahl[]" required>
         </div>
       </div>
       <button type="button" class="add-team" onclick="addTeam()">Weiteres Team hinzufügen</button>
@@ -65,9 +64,7 @@
       const newTeamSection = document.createElement("div");
       newTeamSection.classList.add("team-section");
       newTeamSection.innerHTML = `
-        <label for="kinderZahl${teamCount}">Wieviel Kinder</label>
-        <input type="text" id="kinderZahl${teamCount}" name="kinderZahl[]" required>
-        
+       
         <label for="teamName${teamCount}">Teamname</label>
         <input type="text" id="teamName${teamCount}" name="teamName[]" required>
         
@@ -78,6 +75,9 @@
           <option value="U12">U12</option>
           <option value="U13">U13</option>
         </select>
+         <label for="kinderZahl${teamCount}">Wieviel Kinder</label>
+        <input type="text" id="kinderZahl${teamCount}" name="kinderZahl[]" required>
+        
         <button type="button" class="remove-team" onclick="removeTeam(this)">Team entfernen</button>
       `;
       container.appendChild(newTeamSection);
