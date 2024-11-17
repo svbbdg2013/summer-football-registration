@@ -3,23 +3,143 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fiesta Fußball Anmeldung</title>
+  <title>‘FIESTA OF FUßBAL’ Anmeldung</title>
   <style>
-    body { font-family: Arial, sans-serif; background-color: #f8f8f8; color: #333; margin: 0; padding: 20px; }
-    .form-container { max-width: 700px; margin: auto; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 20px; }
-    h2 { text-align: center; color: #006400; }
-    label { display: block; margin-bottom: 8px; }
-    input, select, button { width: 100%; padding: 8px; margin-bottom: 16px; border: 1px solid #ddd; border-radius: 4px; }
-    .add-team { background-color: #006400; color: white; cursor: pointer; }
-    .remove-team { background-color: #d9534f; color: white; cursor: pointer; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #d0f0c0, #f7ffe0);
+      color: #333;
+    }
+
+    .header {
+      background: url('https://sv-bedburdyck-gierath.de/files/Generelle%20Bilder/Einladung/WhatsApp%20Image%202024-06-28%20at%2010.08.32.jpeg') no-repeat center/cover;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      border-bottom: 4px solid #006400;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      margin: 0;
+      color: #ffcc00;
+    }
+
+    .header img {
+      max-width: 100px;
+      margin-top: 10px;
+    }
+
+    .content-container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+    }
+
+    h2, h3 {
+      text-align: center;
+      color: #006400;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #555;
+    }
+
+    ul {
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .add-team {
+      background-color: #006400;
+      color: white;
+      cursor: pointer;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    .remove-team {
+      background-color: #d9534f;
+      color: white;
+      cursor: pointer;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .footer a {
+      color: #006400;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <div class="form-container">
-    <h2>Fiesta Fußball Anmeldung</h2>
-    <p>**Sommer-Fußballturnier** am <strong>15. Juni 2025</strong> bei **SV Bedburdyck Gierath**.<br>
-    Gruppenphase, Knockout, und Platzierung mit Party-Atmosphäre (DJ, Live-Musik).</p>
-    
+
+  <!-- Header Section -->
+  <div class="header">
+    <h1>‘FIESTA OF FUßBAL’ Sommerfest</h1>
+    <img src="https://sv-bedburdyck-gierath.de/assets/img/logo.png" alt="SV Bedburdyck Gierath Logo">
+  </div>
+
+  <!-- Information Section -->
+  <div class="content-container">
+    <h2>Turnierdetails</h2>
+    <p><strong>Wann:</strong> 15. Juni 2025 (Nachmittag bis Abend)</p>
+    <p><strong>Wo:</strong> SV Bedburdyck Gierath, Gierather Straße 78, 41363 Jüchen</p>
+    <p><strong>Format:</strong></p>
+    <ul>
+      <li>5-a-Side Turnier (4+1 Spieler pro Mannschaft)</li>
+      <li>Gruppenphase, Knockout und Platzierung</li>
+      <li>Spieldauer: 10 Minuten pro Spiel</li>
+      <li>Altersgruppen: U10, U11, U12, U13</li>
+    </ul>
+    <p><strong>Highlights:</strong></p>
+    <ul>
+      <li>Live-Musik und DJ</li>
+      <li>Grillen, Pommes, Kuchen und Bistro</li>
+      <li>Kinder-Entertainment: Hüpfburg, Torschussmessgerät, Freestyle Fußballer, Beachvolleyball, Eltern-100m-Rennen</li>
+    </ul>
+    <p><strong>Kosten:</strong></p>
+    <ul>
+      <li>Anmeldegebühr: 20 € pro Mannschaft (max. 10 Kinder)</li>
+      <li>Preis pro Kind: 5 € (inkl. 1 Brötchen und 1 Softdrink)</li>
+    </ul>
+    <p>Spielplan und weitere Infos unter: <a href="https://www.meinturnierplan.de/showit.php?id=1731658597">Turnierplan</a></p>
+  </div>
+
+  <!-- Registration Form Section -->
+  <div class="content-container">
+    <h2>Anmeldung</h2>
     <form action="https://formsubmit.co/svbbdg2013@gmail.com" method="POST" id="registrationForm">
       <h3>Persönliche Angaben</h3>
       <label for="registrantName">Ihr Name</label>
@@ -28,12 +148,13 @@
       <label for="contact">Kontaktinformationen</label>
       <input type="email" id="contact" name="contact" placeholder="E-Mail" required>
       <input type="tel" id="phone" name="phone" placeholder="Telefonnummer">
-      <label for="clubName1">Vereinsname</label>
-      <input type="text" id="clubName1" name="clubName[]" required>
+      
+      <label for="clubName">Vereinsname</label>
+      <input type="text" id="clubName" name="clubName" required>
+
       <h3>Mannschaftsdaten</h3>
       <div id="teamsContainer">
         <div class="team-section">
-        
           <label for="teamName1">Teamname</label>
           <input type="text" id="teamName1" name="teamName[]" required>
           
@@ -44,17 +165,21 @@
             <option value="U12">U12</option>
             <option value="U13">U13</option>
           </select>
-          <label for="kinderZahl">Wieviel Kinder</label>
-          <input type="int" id="kinderZahl" name="kinderZahl[]" required>
+          
+          <label for="kinderZahl1">Wieviel Kinder</label>
+          <input type="number" id="kinderZahl1" name="kinderZahl[]" required>
         </div>
       </div>
       <button type="button" class="add-team" onclick="addTeam()">Weiteres Team hinzufügen</button>
-      <h3>Kosten</h3>
-      <p>Anmeldegebühr: <strong>20 € pro Mannschaft</strong>.<br>Preis pro Kind: <strong>5 €</strong> (inkl. 1 Brötchen + 1 Softdrink).</p>
       <button type="submit">Anmeldung abschicken</button>
     </form>
   </div>
-  
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>© 2025 SV Bedburdyck Gierath. Alle Rechte vorbehalten.</p>
+  </div>
+
   <script>
     let teamCount = 1;
 
@@ -64,7 +189,6 @@
       const newTeamSection = document.createElement("div");
       newTeamSection.classList.add("team-section");
       newTeamSection.innerHTML = `
-       
         <label for="teamName${teamCount}">Teamname</label>
         <input type="text" id="teamName${teamCount}" name="teamName[]" required>
         
@@ -75,9 +199,9 @@
           <option value="U12">U12</option>
           <option value="U13">U13</option>
         </select>
-         <label for="kinderZahl${teamCount}">Wieviel Kinder</label>
-        <input type="text" id="kinderZahl${teamCount}" name="kinderZahl[]" required>
         
+        <label for="kinderZahl${teamCount}">Wieviel Kinder</label>
+        <input type="number" id="kinderZahl${teamCount}" name="kinderZahl[]" required>
         <button type="button" class="remove-team" onclick="removeTeam(this)">Team entfernen</button>
       `;
       container.appendChild(newTeamSection);
