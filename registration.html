@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>‘FIESTA OF FUßBAL’ Anmeldung</title>
+  <title>Fiesta Fußball Anmeldung</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,7 +14,7 @@
     }
 
     .header {
-      background: url('https://sv-bedburdyck-gierath.de/files/Generelle%20Bilder/Einladung/WhatsApp%20Image%202024-06-28%20at%2010.08.32.jpeg') no-repeat center/cover;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Soccer_field_transparent.svg') no-repeat center/cover;
       color: white;
       text-align: center;
       padding: 30px;
@@ -107,8 +107,8 @@
 
   <!-- Header Section -->
   <div class="header">
-    <h1>‘FIESTA OF FUßBAL’ Sommerfest</h1>
-    <img src="https://sv-bedburdyck-gierath.de/assets/img/logo.png" alt="SV Bedburdyck Gierath Logo">
+    <h1>Fiesta Fußball Sommerturnier</h1>
+    <img src="https://via.placeholder.com/100x100?text=Logo" alt="SV Bedburdyck Gierath Logo">
   </div>
 
   <!-- Information Section -->
@@ -140,13 +140,13 @@
   <!-- Registration Form Section -->
   <div class="content-container">
     <h2>Anmeldung</h2>
-    <form id="registrationForm">
+    <form action="https://formsubmit.co/svbbdg2013@gmail.com" method="POST" id="registrationForm">
       <h3>Persönliche Angaben</h3>
       <label for="registrantName">Ihr Name</label>
       <input type="text" id="registrantName" name="registrantName" required>
       
-      <label for="email">Kontaktinformationen</label>
-      <input type="email" id="email" name="email" placeholder="Email Address" required>
+      <label for="contact">Kontaktinformationen</label>
+      <input type="email" id="contact" name="contact" placeholder="E-Mail" required>
       <input type="tel" id="phone" name="phone" placeholder="Telefonnummer">
       
       <label for="clubName">Vereinsname</label>
@@ -180,35 +180,7 @@
     <p>© 2025 SV Bedburdyck Gierath. Alle Rechte vorbehalten.</p>
   </div>
 
-  <!-- JavaScript -->
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
-    (function () {
-      emailjs.init("YYHqECIoc72r0sUBF"); // Replace with your EmailJS user ID
-    })();
-
-    document.getElementById("registrationForm").addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      const formData = new FormData(this);
-      const emailData = {
-        registrantName: formData.get("registrantName"),
-        email: formData.get("email"),
-        clubName: formData.get("clubName"),
-        payment_details: "Bank Name: SV Bank\nIBAN: DE89 3704 0044 0532 0130 00\nBIC: COBADEFFXXX\nVerwendungszweck: Fiesta Fußball",
-      };
-
-      emailjs.send("service_v6kowyg", "template_o4ywmqj", emailData)
-        .then(() => {
-          alert("Registration confirmation sent!");
-          this.reset();
-        })
-        .catch((error) => {
-          console.error("Error sending email:", error);
-          alert("Failed to send confirmation email.");
-        });
-    });
-
     let teamCount = 1;
 
     function addTeam() {
@@ -239,5 +211,40 @@
       button.parentElement.remove();
     }
   </script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("YYHqECIoc72r0sUBF"); // Replace with your EmailJS user ID
+    })();
+  
+    function sendEmail(event) {
+      event.preventDefault(); // Prevent default form submission
+  
+      const formData = new FormData(event.target);
+  
+      // Map form data to EmailJS template variables
+      const emailData = {
+        registrant_name: formData.get("registrantName"),
+        club_name: formData.get("clubName"),
+        contact_email: formData.get("email"),
+        payment_details: "Bank Name: SV Bank\nIBAN: DE89 3704 0044 0532 0130 00",
+      };
+  
+      // Send email
+      emailjs.send("service_v6kowyg", "template_o4ywmqj", emailData)
+        .then(() => {
+          alert("Registration confirmation sent!");
+          event.target.reset(); // Reset the form
+        })
+        .catch((error) => {
+          console.error("Error sending email:", error);
+          alert("Failed to send confirmation email.");
+        });
+    }
+  
+    // Attach sendEmail function to the form submission
+    document.getElementById("registrationForm").addEventListener("submit", sendEmail);
+  </script>
+  
 </body>
 </html>
