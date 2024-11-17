@@ -14,7 +14,7 @@
     }
 
     .header {
-      background: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Soccer_field_transparent.svg') no-repeat center/cover;
+      background: url('https://sv-bedburdyck-gierath.de/files/Generelle%20Bilder/Einladung/WhatsApp%20Image%202024-06-28%20at%2010.08.32.jpeg') no-repeat center/cover;
       color: white;
       text-align: center;
       padding: 30px;
@@ -108,7 +108,7 @@
   <!-- Header Section -->
   <div class="header">
     <h1>Fiesta Fußball Sommerturnier</h1>
-    <img src="https://via.placeholder.com/100x100?text=Logo" alt="SV Bedburdyck Gierath Logo">
+    <img src="https://sv-bedburdyck-gierath.de/assets/img/logo.png" alt="SV Bedburdyck Gierath Logo">
   </div>
 
   <!-- Information Section -->
@@ -141,6 +141,7 @@
   <div class="content-container">
     <h2>Anmeldung</h2>
     <form action="https://formsubmit.co/svbbdg2013@gmail.com" method="POST" id="registrationForm">
+      
       <input type="hidden" name="_subject" value="FiestaFussbal Registration">
       <input type="hidden" name="_next" value="https://svbbdg2013.github.io/summer-football-registration/confirmation.html">
       <h3>Persönliche Angaben</h3>
@@ -226,9 +227,9 @@
   
       // Map form data to EmailJS template variables
       const emailData = {
-        registrant_name: formData.get("registrantName"),
-        club_name: formData.get("clubName"),
-        contact_email: formData.get("email"),
+        registrantName: formData.get("registrantName"),
+        clubName: formData.get("clubName"),
+        email: formData.get("email"),
         payment_details: "Bank Name: SV Bank\nIBAN: DE89 3704 0044 0532 0130 00",
       };
   
