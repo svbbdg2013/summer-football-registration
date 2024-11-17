@@ -140,9 +140,7 @@
   <!-- Registration Form Section -->
   <div class="content-container">
     <h2>Anmeldung</h2>
-    <form action="https://formsubmit.co/svbbdg2013@gmail.com" method="POST" id="registrationForm">
-      <input type="hidden" name="_next" value="https://svbbdg2013.github.io/summer-football-registration/confirmation.html">
-      <input type="hidden" name="_subject" value="FiestaFussbalTurnier25">
+    <form id="registrationForm">
       <h3>Persönliche Angaben</h3>
       <label for="registrantName">Ihr Name</label>
       <input type="text" id="registrantName" name="registrantName" required>
@@ -182,7 +180,35 @@
     <p>© 2025 SV Bedburdyck Gierath. Alle Rechte vorbehalten.</p>
   </div>
 
+  <!-- JavaScript -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
+    (function () {
+      emailjs.init("YYHqECIoc72r0sUBF"); // Replace with your EmailJS user ID
+    })();
+
+    document.getElementById("registrationForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(this);
+      const emailData = {
+        registrant_name: formData.get("registrantName"),
+        email: formData.get("email"),
+        club_name: formData.get("clubName"),
+        payment_details: "Bank Name: SV Bank\nIBAN: DE89 3704 0044 0532 0130 00\nBIC: COBADEFFXXX\nVerwendungszweck: Fiesta Fußball",
+      };
+
+      emailjs.send("service_v6kowyg", "template_o4ywmqj", emailData)
+        .then(() => {
+          alert("Registration confirmation sent!");
+          this.reset();
+        })
+        .catch((error) => {
+          console.error("Error sending email:", error);
+          alert("Failed to send confirmation email.");
+        });
+    });
+
     let teamCount = 1;
 
     function addTeam() {
